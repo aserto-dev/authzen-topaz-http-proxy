@@ -4,4 +4,6 @@
 VERSION=$(npm version patch)
 
 git commit -am "bumped version to $VERSION"
-git push --follow-tags
+git push
+git tag $VERSION
+git push --tags

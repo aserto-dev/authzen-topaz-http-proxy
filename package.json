@@ -13,6 +13,8 @@
     "docker-build": "scripts/docker-build.sh",
     "docker-run": "scripts/docker-run.sh",
     "eject": "react-scripts eject",
+    "gcp-build": "scripts/build-gcp.sh",
+    "gcp-deploy": "scripts/deploy-gcp.sh",
     "prod": "yarn build-all && yarn server",
     "release": "./scripts/release.sh",
     "server-dev": "nodemon ./server/index.ts",
