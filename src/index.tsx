@@ -9,7 +9,7 @@ root.render(
       vendor="Topaz"
       logo="topaz.png"
       url="https://www.topaz.sh"
-      pdpurl="https://topaz-todo.authzen-interop.net"
+      pdpurl="https://topaz-todo-proxy.authzen-interop.net"
     />
   </React.StrictMode>
 )
