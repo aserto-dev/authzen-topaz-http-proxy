@@ -2,7 +2,7 @@
 
 REGISTRY=${REGISTRY:-gcr.io}
 PROJECT=${PROJECT:-authzen-457117}
-IMAGE=${IMAGE:authzen-topaz-http-proxy}
+IMAGE=${IMAGE:-authzen-topaz-http-proxy}
 
 # extract version from package.json
 VERSION=$(cat package.json \
