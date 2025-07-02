@@ -1,0 +1,71 @@
+{
+  "name": "authzen-topaz-http-proxy",
+  "version": "1.0.21",
+  "description": "AuthZEN to Aserto proxy",
+  "main": "./build-server/index.js",
+  "scripts": {
+    "build-all": "yarn clean && concurrently \"yarn build\" \"yarn build-server\"",
+    "build-server": "rm -rf build-server && tsc -p service",
+    "build": "react-scripts build",
+    "clean": "rm -rf build && rm -rf build-server",
+    "client": "PORT=3000 react-scripts start",
+    "dev": "concurrently \"yarn run server-dev\" \"yarn run client\"",
+    "docker-build": "scripts/docker-build.sh",
+    "docker-run": "scripts/docker-run.sh",
+    "eject": "react-scripts eject",
+    "prod": "yarn build-all && yarn server",
+    "release": "./scripts/release.sh",
+    "server-dev": "nodemon ./server/index.ts",
+    "server": "node ./build-server/index.js"
+  },
+  "repository": "https://github.com/aserto-dev/authzen-topaz-http-proxy",
+  "author": "Omri Gazitt",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@aserto/authzen-interop-react": "1.0.8",
+    "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "dotenv-expand": "^11.0.6",
+    "express": "^4.18.3",
+    "express-jwt": "^8.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "typescript": "^5.4.2"
+  },
+  "prettier": "@aserto/ts-linting-configs/prettier.config",
+  "devDependencies": {
+    "@aserto/ts-linting-configs": "^2.7.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "packageManager": "yarn@1.22.19"
+}
